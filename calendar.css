@@ -1,0 +1,81 @@
+.calendar {
+  max-width: 300px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+.month-year-controls {
+  display: grid;
+  grid-template-areas: "my . . c";
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.month-year {
+  grid-area: my;
+}
+
+.controls {
+  grid-area: c;
+}
+
+.days-of-the-week {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.daysOfTheWeekAndDays {
+  display: none;
+}
+
+.daysOfTheWeekAndDays.show {
+  display: block;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(10px, 1fr));
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.months.show {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.months {
+  display: none;
+}
+
+.days span {
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.days span:hover {
+  background: slateblue;
+}
+
+.days span.selected {
+  background: slateblue;
+}
+
+.otherMonthDays {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.months span {
+  padding: 12px 12px;
+  cursor: pointer;
+}
+
+.months span:hover {
+  background: slateblue;
+}
