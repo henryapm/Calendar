@@ -1,8 +1,3 @@
-let selected = {
-  year: date.getFullYear(),
-  month: date.getMonth(),
-}
-
 function showMonths() {
   monthsEl.innerHTML= '';
   hideAndShow(daysOfTheWeekAndDays, monthsEl);
