@@ -54,6 +54,17 @@
   display: none;
 }
 
+.years.show {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.years {
+  display: none;
+}
+
 .days span {
   padding: 7px 12px;
   cursor: pointer;
@@ -76,6 +87,23 @@
   cursor: pointer;
 }
 
+.months span.selected {
+  background: slateblue;
+}
+
 .months span:hover {
+  background: slateblue;
+}
+
+.years span {
+  padding: 12px 12px;
+  cursor: pointer;
+}
+
+.years span:hover {
+  background: slateblue;
+}
+
+.years span.selected {
   background: slateblue;
 }
