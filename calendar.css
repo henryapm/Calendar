@@ -1,9 +1,17 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: baseline;
+  gap: 20px;
+}
+
 .calendar {
   max-width: 300px;
+  max-height: 100%;
   border: 1px solid gray;
   border-radius: 3px;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 .month-year-controls {
@@ -76,6 +84,7 @@
 
 .days span.selected {
   background: slateblue;
+  color: white;
 }
 
 .otherMonthDays {
@@ -89,6 +98,7 @@
 
 .months span.selected {
   background: slateblue;
+  color: white;
 }
 
 .months span:hover {
@@ -106,4 +116,87 @@
 
 .years span.selected {
   background: slateblue;
+  color: white;
+}
+
+.tasks {
+  display: grid;
+  width: 100%;
+  height: 350px;
+  padding: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  grid-template-columns: 110px 1fr;
+  overflow-y: scroll;
+}
+
+.current-month-dates-and-hours {
+  display: grid;
+  grid-template-areas: " month date"
+    "  .   date"
+    "hours task";
+  padding: 10px;
+  gap: 20px;
+  width: 100%;
+}
+
+.hour.last {
+  margin-bottom: 20px;
+}
+
+.current-month-dates-and-hours .date {
+  grid-area: date;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, 15px);
+  justify-items: center;
+}
+
+.current-month-dates-and-hours .hours {
+  grid-area: hours;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.current-month-dates-and-hours .task {
+  grid-area: task;
+  display: grid;
+  grid-template-columns: [inicio] 1fr [sun] 1fr [mon] 1fr [tue] 1fr [wed] 1fr [thu] 1fr [fri] 1fr [sat];
+  grid-template-rows: [inicio] 1fr [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six] 1fr [seven] 1fr [eight] 1fr [nine] 1fr [ten] 1fr [eleven] 1fr [twelve] 1fr [thirtteen] 1fr [fourteen] 1fr [fifteen] 1fr [sixteen] 1fr [seventeen] 1fr [eighteen] 1fr [nineteen] 1fr [twenty] 1fr [twentyone] 1fr [twentytwo] 1fr [twentythree] 1fr [twentyfour];
+  justify-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  text-align: center;
+  gap: 5px;
+}
+
+.task span.task {
+  background: slateblue;
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.task span {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.task span.first {
+  grid-column: inicio / sun;
+  grid-row: nine / eleven;
+}
+
+.task span.second {
+  grid-row: seven / nine;
+  grid-column: sun / mon;
+}
+
+.current-month-and-hours span {
+  padding: 20px;
+  background: slateblue;
+  border-radius: 3px;
+  color: white;
 }

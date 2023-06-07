@@ -21,7 +21,7 @@ function showYears() {
 function findAndSetYear() {
   yearElements = Array.from(document.querySelectorAll('.years span'));
   const currentYearEl = yearElements.find(year => parseInt(year.dataset.year) === currentYear);
-// if the currentYearEl Exist and is equal to currentYear it gets selected
+// if currentYearEl Exists and is equal to currentYear it gets selected
   if (currentYearEl && parseInt(currentYearEl.textContent) === currentYear) {
     currentYearEl.classList.add('selected');
   }

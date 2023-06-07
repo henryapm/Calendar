@@ -129,17 +129,10 @@ function fillCalendar(firstDayOfTheMonth, lastDayOfThePrevMonth, lastDayOfTheMon
 
 function findAndsetday() {
   const daysElements = Array.from(document.querySelectorAll('.days span'));
-  console.log(currentYear, currentMonth);
   const currentDay = daysElements.find(el => parseInt(el.textContent) === date.getDate())
   if (parseInt(currentDay.dataset.month) === currentMonth && parseInt(currentDay.dataset.year) === currentYear) {
     currentDay.classList.add('selected');
   }
-  // for (let i = 0; i < days.length; i++) {
-  //   days[i].classList.remove('selected');
-  //   if (parseInt(days[i].textContent) === day) {
-  //     days[i].classList.add('selected');
-  //   }
-  // }
 }
 function seeNextMonth() {
   if (daysOfTheWeekAndDays.classList.contains('show')) {
